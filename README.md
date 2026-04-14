@@ -92,36 +92,44 @@ For further (native) installation methods, please refer to the [Installation doc
 
 This repository includes a minimal Gate.io spot dry-run setup plus a separate webserver configuration for download and backtest pages.
 
-Copy the example configs into `user_data/` and replace the placeholder secrets before use:
+1. Copy the example configs into `user_data/`:
 
 ```bash
 cp config_examples/config_gateio_local.example.json user_data/config.json
 cp config_examples/config_gateio_webserver.example.json user_data/config.webserver.json
 ```
 
-Start the dry-run trading UI on port `8080`:
+2. Replace the placeholder secrets in `user_data/config.json` and `user_data/config.webserver.json`.
+
+3. Start the dry-run trading UI on port `8080`:
 
 ```bash
 freqtrade trade --config user_data/config.json --strategy SampleStrategy
 ```
 
-Start the standalone download and backtest UI on port `8081`:
+4. Start the standalone download and backtest UI on port `8081`:
 
 ```bash
 freqtrade webserver -c user_data/config.json -c user_data/config.webserver.json
 ```
 
-Download example data:
+5. Download example data:
 
 ```bash
 freqtrade download-data --config user_data/config.json --pairs BTC/USDT ETH/USDT -t 5m --days 7
 ```
 
-Run the example backtest used during setup:
+6. Run the example backtest used during setup:
 
 ```bash
 freqtrade backtesting --config user_data/config.json --strategy SampleStrategy --timeframe 5m --timerange 20260407-20260414
 ```
+
+Reference files:
+
+- Setup guide: [docs/local-gateio-setup.md](docs/local-gateio-setup.md)
+- Release note text: [RELEASE_GATEIO_LOCAL_SETUP.md](RELEASE_GATEIO_LOCAL_SETUP.md)
+- GitHub release publish guide: [RELEASE_PUBLISH_STEPS.md](RELEASE_PUBLISH_STEPS.md)
 
 ### Kisa Kullanim (TR)
 
