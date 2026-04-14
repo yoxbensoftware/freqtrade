@@ -88,6 +88,41 @@ Please refer to the [Docker Quickstart documentation](https://www.freqtrade.io/e
 
 For further (native) installation methods, please refer to the [Installation documentation page](https://www.freqtrade.io/en/stable/installation/).
 
+### Local Gate.io setup used in this repository
+
+This repository includes a minimal dry-run setup for Gate.io spot trading and a separate webserver configuration for download/backtest pages.
+
+Copy the example configs into `user_data/` and replace the placeholder API secrets before using them:
+
+```bash
+cp config_examples/config_gateio_local.example.json user_data/config.json
+cp config_examples/config_gateio_webserver.example.json user_data/config.webserver.json
+```
+
+Start the dry-run trading UI on port `8080`:
+
+```bash
+freqtrade trade --config user_data/config.json --strategy SampleStrategy
+```
+
+Start the standalone download/backtest UI on port `8081`:
+
+```bash
+freqtrade webserver -c user_data/config.json -c user_data/config.webserver.json
+```
+
+Download example data:
+
+```bash
+freqtrade download-data --config user_data/config.json --pairs BTC/USDT ETH/USDT -t 5m --days 7
+```
+
+Run the example backtest used during setup:
+
+```bash
+freqtrade backtesting --config user_data/config.json --strategy SampleStrategy --timeframe 5m --timerange 20260407-20260414
+```
+
 ## Basic Usage
 
 ### Bot commands
