@@ -123,6 +123,37 @@ Run the example backtest used during setup:
 freqtrade backtesting --config user_data/config.json --strategy SampleStrategy --timeframe 5m --timerange 20260407-20260414
 ```
 
+### Kisa Kullanim (TR)
+
+Bu repodaki calisan yerel akis kisaca su sekilde kullanilir:
+
+```bash
+cp config_examples/config_gateio_local.example.json user_data/config.json
+cp config_examples/config_gateio_webserver.example.json user_data/config.webserver.json
+```
+
+`user_data/config.json` icinde API sifrelerini doldurduktan sonra:
+
+```bash
+# Trade UI
+freqtrade trade --config user_data/config.json --strategy SampleStrategy
+
+# Download / Backtest UI
+freqtrade webserver -c user_data/config.json -c user_data/config.webserver.json
+```
+
+Arayuz portlari:
+
+- `http://127.0.0.1:8080` - trade UI
+- `http://127.0.0.1:8081` - download ve backtest UI
+
+Ornek veri indirme ve backtest:
+
+```bash
+freqtrade download-data --config user_data/config.json --pairs BTC/USDT ETH/USDT -t 5m --days 7
+freqtrade backtesting --config user_data/config.json --strategy SampleStrategy --timeframe 5m --timerange 20260407-20260414
+```
+
 ## Basic Usage
 
 ### Bot commands
