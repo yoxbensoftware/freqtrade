@@ -90,9 +90,9 @@ For further (native) installation methods, please refer to the [Installation doc
 
 ### Local Gate.io setup used in this repository
 
-This repository includes a minimal dry-run setup for Gate.io spot trading and a separate webserver configuration for download/backtest pages.
+This repository includes a minimal Gate.io spot dry-run setup plus a separate webserver configuration for download and backtest pages.
 
-Copy the example configs into `user_data/` and replace the placeholder API secrets before using them:
+Copy the example configs into `user_data/` and replace the placeholder secrets before use:
 
 ```bash
 cp config_examples/config_gateio_local.example.json user_data/config.json
@@ -105,7 +105,7 @@ Start the dry-run trading UI on port `8080`:
 freqtrade trade --config user_data/config.json --strategy SampleStrategy
 ```
 
-Start the standalone download/backtest UI on port `8081`:
+Start the standalone download and backtest UI on port `8081`:
 
 ```bash
 freqtrade webserver -c user_data/config.json -c user_data/config.webserver.json
@@ -125,14 +125,14 @@ freqtrade backtesting --config user_data/config.json --strategy SampleStrategy -
 
 ### Kisa Kullanim (TR)
 
-Bu repodaki calisan yerel akis kisaca su sekilde kullanilir:
+Bu repodaki yerel akis kisa olarak su sekilde calisir:
 
 ```bash
 cp config_examples/config_gateio_local.example.json user_data/config.json
 cp config_examples/config_gateio_webserver.example.json user_data/config.webserver.json
 ```
 
-`user_data/config.json` icinde API sifrelerini doldurduktan sonra:
+`user_data/config.json` icinde gerekli gizli degerleri doldurduktan sonra:
 
 ```bash
 # Trade UI
@@ -153,6 +153,8 @@ Ornek veri indirme ve backtest:
 freqtrade download-data --config user_data/config.json --pairs BTC/USDT ETH/USDT -t 5m --days 7
 freqtrade backtesting --config user_data/config.json --strategy SampleStrategy --timeframe 5m --timerange 20260407-20260414
 ```
+
+Daha ayrintili kullanim icin [docs/local-gateio-setup.md](docs/local-gateio-setup.md) sayfasina bakin.
 
 ## Basic Usage
 

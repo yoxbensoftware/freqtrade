@@ -11,6 +11,18 @@ It uses:
 - port `8080` for the trading UI
 - port `8081` for the standalone download/backtest UI
 
+## Screenshots
+
+Trading and backtesting pages use the standard freqUI screens already included in this repository.
+
+Trading and UI access example:
+
+![freqUI access](assets/frequi_url.png)
+
+Backtesting page example:
+
+![freqUI backtesting](assets/freqUI-backtesting-dark.png)
+
 ## Config files
 
 Copy the provided example files into `user_data/`:
@@ -94,3 +106,8 @@ Use these values in the backtest page:
 - Use port `8081` for download and backtest pages.
 - Use port `8080` for the running trade bot.
 - `user_data/config.json` is intentionally ignored by git so live secrets are not committed.
+- If the backtest page appears stuck at `startup 0.00%`, refresh the page and use `Load backtest result` to open the generated result file.
+
+## Related release note
+
+See [release-notes-gateio-local-setup.md](release-notes-gateio-local-setup.md) for a short summary of what was prepared in this setup snapshot.

@@ -24,6 +24,7 @@ nav:
     - Data Downloading: data-download.md
     - Backtesting: backtesting.md
     - Local Gate.io Setup: local-gateio-setup.md
+    - Release Notes: release-notes-gateio-local-setup.md
     - Hyperopt: hyperopt.md
     - FreqAI:
         - Introduction: freqai.md
